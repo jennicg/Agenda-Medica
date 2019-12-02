@@ -22,19 +22,19 @@ namespace AgendaMedicaAPI.Controllers
         {
             _context = context;
         }
-        int i = 0;
+       // int i = 0;
         // GET: api/Consultas
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Appointment>>> GetConsultas()
         {
-            return await _context.Consultas.ToListAsync();
+            return await _context.Appointment.ToListAsync();
         }
 
         // GET: api/Consultas/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Appointment>> GetConsulta(int id)
+        public async Task<ActionResult<Appointment>> GetAppointment(int id)
         {
-            var consulta = await _context.Consultas.FindAsync(id);
+            var consulta = await _context.Appointment.FindAsync(id);
 
             if (consulta == null)
             {
@@ -46,23 +46,23 @@ namespace AgendaMedicaAPI.Controllers
 
         // PUT: api/Consultas/5
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutConsulta(int id, Appointment consulta)
+        public async Task<IActionResult> PutAppointment(int id, Appointment appointment)
         {
-            if (id != consulta.Id_Consulta)
+            if (id != appointment.Id_Consulta)
             {
                 return BadRequest();
             }
-            if (consulta.Dat_Inicio_Consulta < consulta.Dat_Fim_Consulta)
+            if (appointment.Dat_Inicio_Consulta < appointment.Dat_Fim_Consulta)
             {
                 return BadRequest();
             }
 
-            if (_context.Consultas.Any(x => x.Dat_Inicio_Consulta <= consulta.Dat_Inicio_Consulta && x.Dat_Fim_Consulta >= consulta.Dat_Fim_Consulta))
+            if (_context.Appointment.Any(x => x.Dat_Inicio_Consulta <= appointment.Dat_Inicio_Consulta && x.Dat_Fim_Consulta >= appointment.Dat_Fim_Consulta))
             {
                 return BadRequest();
 
             }
-            _context.Entry(consulta).State = EntityState.Modified;
+            _context.Entry(appointment).State = EntityState.Modified;
 
             try
             {
@@ -85,56 +85,56 @@ namespace AgendaMedicaAPI.Controllers
 
         // POST: api/Consultas
         [HttpPost]
-        public async Task<ActionResult<Appointment>> PostConsulta(Appointment consulta)
+        public async Task<ActionResult<Appointment>> PostAppointment(Appointment appointment)
         {
             Appointment con = new Appointment();
 
 
 
-            _context.Consultas.Add(consulta);
+            _context.Appointment.Add(appointment);
             await _context.SaveChangesAsync();
 
-            if (consulta.Dat_Inicio_Consulta < consulta.Dat_Fim_Consulta)
+            if (appointment.Dat_Inicio_Consulta < appointment.Dat_Fim_Consulta)
             {
                 return BadRequest();
             }
 
-            if (_context.Consultas.Any(x => x.Dat_Inicio_Consulta <= consulta.Dat_Inicio_Consulta && x.Dat_Fim_Consulta >= consulta.Dat_Fim_Consulta))
+            if (_context.Appointment.Any(x => x.Dat_Inicio_Consulta <= appointment.Dat_Inicio_Consulta && x.Dat_Fim_Consulta >= appointment.Dat_Fim_Consulta))
             {
                 return BadRequest();
 
             }
-            if (consulta == null)
+            if (appointment == null)
             {
                 return NotFound();
             }
 
-            _context.Consultas.Remove(consulta);
+            _context.Appointment.Remove(appointment);
             await _context.SaveChangesAsync();
 
 
-            return CreatedAtAction("GetConsulta", new { id = consulta.Id_Consulta }, consulta);
+            return CreatedAtAction("GetConsulta", new { id = appointment.Id_Consulta }, appointment);
         }
 
         // DELETE: api/Consultas/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Appointment>> DeleteConsulta(int id)
+        public async Task<ActionResult<Appointment>> DeleteAppointment(int id)
         {
-            var consulta = await _context.Consultas.FindAsync(id);
-            if (consulta == null)
+            var appointment = await _context.Appointment.FindAsync(id);
+            if (appointment == null)
             {
                 return NotFound();
             }
 
-            _context.Consultas.Remove(consulta);
+            _context.Appointment.Remove(appointment);
             await _context.SaveChangesAsync();
 
-            return consulta;
+            return appointment;
         }
 
         private bool ConsultaExists(int id)
         {
-            return _context.Consultas.Any(e => e.Id_Consulta == id);
+            return _context.Appointment.Any(e => e.Id_Consulta == id);
         }
     }
 }

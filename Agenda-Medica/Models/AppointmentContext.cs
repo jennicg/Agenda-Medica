@@ -13,6 +13,6 @@ namespace AgendaMedicaAPI.Models
 
 
         }
-        public DbSet<Appointment> Consultas { get; set; }
+        public DbSet<Appointment> Appointment { get; set; }
     }
 }
