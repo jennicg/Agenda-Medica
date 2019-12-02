@@ -1,0 +1,5 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/Agenda-Medica/obj/Debug/netcoreapp2.2/AgendaMedicaAPI.assets.cache
