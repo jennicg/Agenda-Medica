@@ -35,7 +35,7 @@ namespace AgendaMedicaAPI
                         (resolver as DefaultContractResolver).NamingStrategy = null;
                 });
 
-            services.AddDbContext<ConsultaContext>(options => options.UseSqlServer(Configuration.GetConnectionString("AgendaMedica")));
+            services.AddDbContext<AppointmentContext>(options => options.UseSqlServer(Configuration.GetConnectionString("AgendaMedica")));
             services.AddCors();
 
         }
