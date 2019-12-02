@@ -49,7 +49,7 @@ namespace AgendaMedicaAPI
             }
 
             app.UseCors(options =>
-           options.WithOrigins("http://localhost:49945").
+           options.WithOrigins("http://localhost:50000").
            AllowAnyMethod().
            AllowAnyHeader().
            AllowAnyOrigin()

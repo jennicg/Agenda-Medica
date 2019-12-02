@@ -1,0 +1,14 @@
+C:\Users\NOTE-06\Source\Repos\jennicg\Agenda-Medica\Agenda-Medica\bin\Debug\netcoreapp2.2\AgendaMedicaAPI.deps.json
+C:\Users\NOTE-06\Source\Repos\jennicg\Agenda-Medica\Agenda-Medica\bin\Debug\netcoreapp2.2\AgendaMedicaAPI.runtimeconfig.json
+C:\Users\NOTE-06\Source\Repos\jennicg\Agenda-Medica\Agenda-Medica\bin\Debug\netcoreapp2.2\AgendaMedicaAPI.runtimeconfig.dev.json
+C:\Users\NOTE-06\Source\Repos\jennicg\Agenda-Medica\Agenda-Medica\bin\Debug\netcoreapp2.2\AgendaMedicaAPI.dll
+C:\Users\NOTE-06\Source\Repos\jennicg\Agenda-Medica\Agenda-Medica\bin\Debug\netcoreapp2.2\AgendaMedicaAPI.pdb
+C:\Users\NOTE-06\Source\Repos\jennicg\Agenda-Medica\Agenda-Medica\obj\Debug\netcoreapp2.2\AgendaMedicaAPI.csprojAssemblyReference.cache
+C:\Users\NOTE-06\Source\Repos\jennicg\Agenda-Medica\Agenda-Medica\obj\Debug\netcoreapp2.2\AgendaMedicaAPI.csproj.CoreCompileInputs.cache
+C:\Users\NOTE-06\Source\Repos\jennicg\Agenda-Medica\Agenda-Medica\obj\Debug\netcoreapp2.2\AgendaMedicaAPI.RazorAssemblyInfo.cache
+C:\Users\NOTE-06\Source\Repos\jennicg\Agenda-Medica\Agenda-Medica\obj\Debug\netcoreapp2.2\AgendaMedicaAPI.RazorAssemblyInfo.cs
+C:\Users\NOTE-06\Source\Repos\jennicg\Agenda-Medica\Agenda-Medica\obj\Debug\netcoreapp2.2\AgendaMedicaAPI.AssemblyInfoInputs.cache
+C:\Users\NOTE-06\Source\Repos\jennicg\Agenda-Medica\Agenda-Medica\obj\Debug\netcoreapp2.2\AgendaMedicaAPI.AssemblyInfo.cs
+C:\Users\NOTE-06\Source\Repos\jennicg\Agenda-Medica\Agenda-Medica\obj\Debug\netcoreapp2.2\AgendaMedicaAPI.RazorTargetAssemblyInfo.cache
+C:\Users\NOTE-06\Source\Repos\jennicg\Agenda-Medica\Agenda-Medica\obj\Debug\netcoreapp2.2\AgendaMedicaAPI.dll
+C:\Users\NOTE-06\Source\Repos\jennicg\Agenda-Medica\Agenda-Medica\obj\Debug\netcoreapp2.2\AgendaMedicaAPI.pdb

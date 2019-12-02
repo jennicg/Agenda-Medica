@@ -14,7 +14,7 @@ namespace AgendaMedicaAPI.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
         {
-            return new string[] { "Itix", "ItixTI" };
+            return new string[] { "Itix", "Itix TI" , "Desafio processo seletivo", "Jennifer"};
         }
 
         // GET api/values/5
