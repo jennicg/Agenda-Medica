@@ -1,0 +1,52 @@
+<h1>{{title}}</h1>
+<h3>Cadastro de agendamentos</h3>
+<hr />
+<form [formGroup]="tasksForm" (ngSubmit)="save()" #formDir="ngForm">
+
+  <div class="form-group row">
+    <label class="control-label col-md-12" for="Client">Cliente</label>
+    <div class="col-md-4">
+      <select class="form-control" data-val="true" formControlName="client">
+        <option value="">--Selecione um cliente--</option>
+        <option *ngFor="let cli of clients" value="{{cli.id}} - {{cli.name}}">
+          {{cli.id}} - {{cli.name}}
+        </option>
+      </select>
+    </div>
+    <span class="text-danger" *ngIf="client.invalid && formDir.submitted">
+      O cliente é obrigatório!
+    </span>
+  </div>
+
+  <div class="form-group row">
+    <label class=" control-label col-md-12">Data inicial</label>
+    <div class="col-md-4">
+      <input class="form-control" type="text" formControlName="dateStart"/>
+    </div>
+    <span class="text-danger" *ngIf="dateStart.invalid && formDir.submitted">
+      A data de inicial é obrigatória!
+    </span>
+  </div>
+
+  <div class="form-group row">
+    <label class=" control-label col-md-12">Data final</label>
+    <div class="col-md-4">
+      <input class="form-control" type="text" formControlName="dateEnd"/>
+    </div>
+    <span class="text-danger" *ngIf="dateEnd.invalid && formDir.submitted">
+      A data de final é obrigatória!
+    </span>
+  </div>
+
+  <div class="form-group row">
+    <label class=" control-label col-md-12">Observação</label>
+    <div class="col-md-4">
+      <input class="form-control" type="text" formControlName="observation">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <button type="submit" class="btn btn-default">Salvar</button>
+    <button class="btn" (click)="cancel()">Cancelar</button>
+  </div>
+</form>

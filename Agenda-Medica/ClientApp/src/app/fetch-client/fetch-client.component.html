@@ -1,0 +1,32 @@
+<h1>Lista de Consultas</h1>
+
+
+
+
+
+<p>
+  <a [routerLink]="['/register-client']">Criar novo</a>
+</p>
+
+<table class='table' *ngIf="clients">
+  <thead>
+    <tr>
+      <th>Código</th>
+      <th>Nome</th>
+      <th>Sobrenome</th>
+      <th>Data de aniversário</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let client of clients">
+      <td>{{ client.id }}</td>
+      <td>{{ client.name }}</td>
+      <td>{{ client.lastName }}</td>
+      <td>{{ client.dateOfBirth }}</td>
+      <td>
+        <a [routerLink]="['/client/edit/', client.id]">Editar</a> |
+        <a [routerLink]="" (click)="delete(client.id)">Excluir</a>
+      </td>
+    </tr>
+  </tbody>
+</table>

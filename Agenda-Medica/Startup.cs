@@ -6,12 +6,14 @@ using AgendaMedicaAPI.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Newtonsoft.Json.Serialization;
+using Swashbuckle.AspNetCore.Swagger;
 
 namespace AgendaMedicaAPI
 {
@@ -29,7 +31,8 @@ namespace AgendaMedicaAPI
         {
             services.AddMvc()
                 .SetCompatibilityVersion(CompatibilityVersion.Version_2_2)
-                .AddJsonOptions(options => {
+                .AddJsonOptions(options =>
+                {
                     var resolver = options.SerializerSettings.ContractResolver;
                     if (resolver != null)
                         (resolver as DefaultContractResolver).NamingStrategy = null;
@@ -47,14 +50,48 @@ namespace AgendaMedicaAPI
             {
                 app.UseDeveloperExceptionPage();
             }
+            else
+            {
+                app.UseExceptionHandler("/Error");
+                app.UseHsts();
+            }
+
+            app.UseHttpsRedirection();
+
+            app.UseMvc();
 
             app.UseCors(options =>
-           options.WithOrigins("http://localhost:50000").
-           AllowAnyMethod().
-           AllowAnyHeader().
-           AllowAnyOrigin()
-            );
-            app.UseMvc();
+                options.AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader()
+                .AllowCredentials());
+
+            //app.UseSwagger();
+            //app.UseSwaggerUI(F =>
+            //{
+            //    F.SwaggerEndpoint("/swagger/v1/swagger.json", "Jenny teste.");
+            //    //F.RoutePrefix = string.Empty;
+            //});
+
+            //app.UseStaticFiles();
+
+            //app.UseSpaStaticFiles();
+
+            app.UseMvc(routes =>
+            {
+                routes.MapRoute(
+                    name: "default",
+                    template: "{controller}/{action=Index}/{id?}");
+            });
+
+            app.UseSpa(spa =>
+            {
+                spa.Options.SourcePath = "ClientApp";
+                if (env.IsDevelopment())
+                {
+                    spa.UseAngularCliServer(npmScript: "start");
+                }
+            });
         }
     }
 }

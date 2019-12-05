@@ -48,16 +48,16 @@ namespace AgendaMedicaAPI.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutAppointment(int id, Appointment appointment)
         {
-            if (id != appointment.Id_Consulta)
+            if (id != appointment.ID_Consuta)
             {
                 return BadRequest();
             }
-            if (appointment.Dat_Inicio_Consulta < appointment.Dat_Fim_Consulta)
+            if (appointment.InicioConsulta < appointment.FimConsulta)
             {
                 return BadRequest();
             }
 
-            if (_context.Appointment.Any(x => x.Dat_Inicio_Consulta <= appointment.Dat_Inicio_Consulta && x.Dat_Fim_Consulta >= appointment.Dat_Fim_Consulta))
+            if (_context.Appointment.Any(x => x.InicioConsulta <= appointment.InicioConsulta && x.FimConsulta >= appointment.FimConsulta))
             {
                 return BadRequest();
 
@@ -94,12 +94,12 @@ namespace AgendaMedicaAPI.Controllers
             _context.Appointment.Add(appointment);
             await _context.SaveChangesAsync();
 
-            if (appointment.Dat_Inicio_Consulta < appointment.Dat_Fim_Consulta)
+            if (appointment.InicioConsulta < appointment.FimConsulta)
             {
                 return BadRequest();
             }
 
-            if (_context.Appointment.Any(x => x.Dat_Inicio_Consulta <= appointment.Dat_Inicio_Consulta && x.Dat_Fim_Consulta >= appointment.Dat_Fim_Consulta))
+            if (_context.Appointment.Any(x => x.InicioConsulta <= appointment.InicioConsulta && x.FimConsulta >= appointment.FimConsulta))
             {
                 return BadRequest();
 
@@ -113,7 +113,7 @@ namespace AgendaMedicaAPI.Controllers
             await _context.SaveChangesAsync();
 
 
-            return CreatedAtAction("GetConsulta", new { id = appointment.Id_Consulta }, appointment);
+            return CreatedAtAction("GetConsulta", new { id = appointment.ID_Consuta }, appointment);
         }
 
         // DELETE: api/Consultas/5
@@ -134,7 +134,7 @@ namespace AgendaMedicaAPI.Controllers
 
         private bool ConsultaExists(int id)
         {
-            return _context.Appointment.Any(e => e.Id_Consulta == id);
+            return _context.Appointment.Any(e => e.ID_Consuta == id);
         }
     }
 }
