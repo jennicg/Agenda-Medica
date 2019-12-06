@@ -6,7 +6,7 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
-import { FetchClientComponent } from './fetch-client/fetch-client.component';
+import { FetchClientComponent } from './lst-consulta/lst-consulta.component';
 import { FetchTasksComponent } from './fetch-tasks/fetch-tasks.component';
 import { AddClientComponent } from './add-client/add-client.component';
 import { AddTasksComponent } from './add-tasks/add-tasks.component';
@@ -28,12 +28,10 @@ import { AddTasksComponent } from './add-tasks/add-tasks.component';
     ReactiveFormsModule,    
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
-      { path: 'fetch-client', component: FetchClientComponent },
-      { path: 'fetch-tasks', component: FetchTasksComponent },
-      { path: 'register-client', component: AddClientComponent },
-      { path: 'client/edit/:id', component: AddClientComponent },
-      { path: 'register-tasks', component: AddTasksComponent },
-      { path: 'tasks/edit/:id', component: AddTasksComponent },
+      { path: 'lst-consulta', component: FetchClientComponent },
+   
+      { path: 'new-appointment', component: AddClientComponent },
+    
     ])
   ],
   providers: [],

@@ -2,8 +2,8 @@ import { Component, Inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
-  selector: 'app-fetch-client',
-  templateUrl: './fetch-client.component.html'
+  selector: 'app-lst-consulta',
+  templateUrl: './lst-consulta.component.html'
 })
 export class FetchClientComponent {
   public clients: Client[];

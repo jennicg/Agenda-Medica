@@ -2,9 +2,8 @@
 <h3>Cadastro de Consulta</h3>
 <hr />
 <form [formGroup]="clientForm" (ngSubmit)="save()" #formDir="ngForm">
-
   <div class="form-group row">
-    <label class=" control-label col-md-12">Nome</label>
+    <label class=" control-label col-md-12">Nome Completo</label>
     <div class="col-md-4">
       <input class="form-control" type="text" formControlName="name">
     </div>
@@ -12,8 +11,7 @@
       O nome é obrigatório!
     </span>
   </div>
-
-  <div class="form-group row">
+  <!--<div class="form-group row">
     <label class=" control-label col-md-12">Sobrenome</label>
     <div class="col-md-4">
       <input class="form-control" type="text" formControlName="lastName">
@@ -21,21 +19,53 @@
     <span class="text-danger" *ngIf="lastName.invalid && formDir.submitted">
       O sobrenome é obrigatório.
     </span>
-  </div>
+  </div>-->
 
   <div class="form-group row">
-    <label class=" control-label col-md-12">Data de nascimento</label>
+    <label class=" control-label col-md-12">Data de Nascimento</label>
     <div class="col-md-4">
-      <input class="form-control" type="text" formControlName="dateOfBirth">
+      <input class="form-control" required type="date" formControlName="dateOfBirth">
     </div>
     <span class="text-danger" *ngIf="dateOfBirth.invalid && formDir.submitted">
-      A data de nascimento é obrigatória.
+      Data de Nascimento é obrigatório.
     </span>
   </div>
 
+
+
+  <div class="form-group row">
+    <label class=" control-label col-md-12">Inicio Consulta</label>
+    <div class="col-md-4">
+      <input class="form-control" required type="datetime-local" formControlName="dateOfBirth">
+    </div>
+    <span class="text-danger" *ngIf="dateOfBirth.invalid && formDir.submitted">
+      O inicio da consulta é obrigatorio.
+    </span>
+  </div>
+
+  <div class="form-group row">
+    <label class=" control-label col-md-12">Fim Consulta</label>
+    <div class="col-md-4">
+      <input class="form-control" required type="datetime-local" formControlName="dateOfBirth">
+    </div>
+    <span class="text-danger" *ngIf="dateOfBirth.invalid && formDir.submitted">
+      O fim da consulta é obrigatório.
+    </span>
+  </div>
+
+
+  <div class="form-group row">
+    <label class=" control-label col-md-12">Observação</label>
+    <div class="col-md-4">
+      <input class="form-control" type="text" formControlName="obs">
+    </div>
+  </div>
 
   <div class="form-group">
     <button type="submit" class="btn btn-default">Salvar</button>
     <button class="btn" (click)="cancel()">Cancelar</button>
   </div>
+
+
+
 </form>

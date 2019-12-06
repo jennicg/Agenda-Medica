@@ -52,19 +52,19 @@ export class AddClientComponent implements OnInit {
     if (this.title == "Criando") {
       this.http.post(this.URL + "api/client", this.clientForm.value)
         .subscribe(
-          result => this._router.navigate(['/fetch-client']),
+          result => this._router.navigate(['/lst-consulta']),
           error => console.error(error));
     }
     else if (this.title == "Editando") {
       this.http.put<Client>(this.URL + "api/client", this.clientForm.value)
         .subscribe(
-          result => this._router.navigate(['/fetch-client']),
+          result => this._router.navigate(['/lst-consulta']),
           error => console.error(error));
     }
   }
 
   cancel() {
-    this._router.navigate(['/fetch-client']);
+    this._router.navigate(['/lst-consulta']);
   }
 
   get name() { return this.clientForm.get('name'); }
