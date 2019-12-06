@@ -7,9 +7,9 @@ import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
 import { FetchClientComponent } from './lst-consulta/lst-consulta.component';
-import { FetchTasksComponent } from './fetch-tasks/fetch-tasks.component';
+
 import { AddClientComponent } from './add-client/add-client.component';
-import { AddTasksComponent } from './add-tasks/add-tasks.component';
+
 
 @NgModule({
   declarations: [
@@ -17,9 +17,7 @@ import { AddTasksComponent } from './add-tasks/add-tasks.component';
     NavMenuComponent,
     HomeComponent,
     FetchClientComponent,
-    FetchTasksComponent,
     AddClientComponent,
-    AddTasksComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
